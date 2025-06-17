@@ -1,0 +1,30 @@
+.card {
+  background-color: #142C52;
+  border: 2px solid #74C69D;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  transition: background-color 0.3s ease;
+  margin: 1rem auto;
+}
+.card img {
+  border-radius: 0.75rem;
+  margin-bottom: 0.5rem;
+  max-height: 290px;
+}
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+.card:hover {
+  background-color: #1B3A66;
+}
+
+/*# sourceMappingURL=projet.css.map */
