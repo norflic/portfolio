@@ -7,7 +7,7 @@ export default function ProjectCard({ DisplayedProject }) {
                 <span>
                     <h3>{DisplayedProject.title}</h3>
                 <span>
-                    {DisplayedProject.image && <img src={DisplayedProject.image} alt='image du projet' />}
+                    {DisplayedProject.image && <img src={DisplayedProject.image} alt='image du projet'  />}
                     {DisplayedProject.lienSite && (
                         <a href={DisplayedProject.lienSite} target="_blank" rel="noopener noreferrer">
                             lien vers {DisplayedProject.title}
