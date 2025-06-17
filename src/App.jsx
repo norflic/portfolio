@@ -1,7 +1,7 @@
 import Header from "./Components/Header.jsx";
 import MaPage from "./Components/MaPage.jsx";
 import Projets from "./Components/Projets.jsx";
-import Stats from "./Components/Stats.jsx";
+import Stats from "./Components/stats/Stats.jsx";
 import {useEffect, useState} from "react";
 
 function App() {
@@ -99,27 +99,58 @@ function App() {
                     time: 30,
                 },
             },
+        ],
+        mobile : [
+            {
+                title: "Livraison",
+                image: "public/projetcts_img/image_indisponible.png",
+                description:
+                    "Livraison a été mon premier projet sur Kotlin. je me suis beaucoup inversi dedans, ce qui a fait que j'ai rapidement maitrisé les bases de ce langage",
+                note:5,
+                data: {
+                    time: 30,
+                },
+            },
         ]
 
     };
     const [selectedProjects, setSelectedProjects] = useState(projects.web);
+    const getCategorieFromProjects = (projectsList) => {
+        return Object.keys(projects).find(
+            (key) => projects[key] === projectsList
+        );
+    };
+    const [selectedCategorie, setSelectedCategorie] = useState(() =>
+        getCategorieFromProjects(projects.web)
+    );
+    console.log(selectedProjects);
+    console.log(selectedCategorie);
 
     useEffect(() => {
         const btnWeb = document.getElementById("btn_web");
         const btnAppli = document.getElementById("btn_appli");
         const btnProjetsPersos = document.getElementById("btn_projets_persos");
+        const btnMobile= document.getElementById("btn_mobile");
 
         btnWeb.addEventListener("click", () => {
             console.log("web");
             setSelectedProjects(projects.web)
+            setSelectedCategorie("web")
         });
         btnAppli.addEventListener("click", () => {
             console.log("appli");
             setSelectedProjects(projects.applications)
+            setSelectedCategorie("appli")
         });
         btnProjetsPersos.addEventListener("click", () => {
-            console.log("appli");
+            console.log("projetsPersos");
             setSelectedProjects(projects.projetsPersos)
+            setSelectedCategorie("projetsPersos")
+        });
+        btnMobile.addEventListener("click", () => {
+            console.log("mobile");
+            setSelectedProjects(projects.mobile)
+            setSelectedCategorie("mobile")
         });
 
         // Optionnel : nettoyage au démontage
@@ -143,10 +174,12 @@ function App() {
                     <button id="btn_appli">Applications</button>
                     <div className="h-6 w-px bg-gray-300"></div> {/* barre verticale */}
                     <button id="btn_projets_persos">Projets persos</button>
+                    <div className="h-6 w-px bg-gray-300"></div> {/* barre verticale */}
+                    <button id="btn_mobile">Mobile</button>
                 </nav>
                 <Projets selectedProjects={selectedProjects} />
             </div>
-            <Stats selectedProjects={selectedProjects} />
+            <Stats selectedProjects={selectedProjects} selectedCategorie={selectedCategorie}/>
         </>
     )
 }
