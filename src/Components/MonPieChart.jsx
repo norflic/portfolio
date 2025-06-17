@@ -1,15 +1,21 @@
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 
-const data = [
-    { name: 'Aéroport', value: 400 },
-    { name: 'Moove Green', value: 300 },
-    { name: 'Challenger', value: 300 },
-    { name: 'Projet D', value: 200 },
-];
+
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
-export default function MonPieChart() {
+export default function MonPieChart({selectedProjects}) {
+    const data = []
+
+
+    if (Array.isArray(selectedProjects)) {
+        selectedProjects.forEach(project => {
+            const temps = project.data?.time || 0;
+            data.push({ name: project.title, value: temps });
+        });
+    } else {
+        console.error("les statistiques ne sont pas un array");
+    }
     return (
         <div className="w-fit">
             <h2 className="text-xl font-bold mb-4 text-center">
