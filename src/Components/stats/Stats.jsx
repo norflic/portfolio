@@ -15,7 +15,7 @@ export default function Stats({selectedProjects, selectedCategorie}) {
 
             </div>
 
-            {/*<img src="public/projetcts_img/repartition_travail_projets.png" alt="diagramme temps passé par projet"/>*/}
+            {/*<img src="public/projects_img/repartition_travail_projets.png" alt="diagramme temps passé par projet"/>*/}
         {/*    possibilite d'afficher les stats de wakapi*/}
         </>
     )
