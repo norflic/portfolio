@@ -43,13 +43,21 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          NODE_ENV: production
 
       - name: List build output
         run: |
           echo "Contenu du dossier dist:"
           ls -la dist/
+          echo "Permissions des fichiers:"
+          ls -la dist/assets/
           echo "Taille du dossier dist:"
           du -sh dist/
+          echo "Contenu de index.html (GitHub):"
+          cat dist/index.html
+          echo "Comparaison avec build local attendu:"
+          echo "Doit contenir: /portfolio/assets/index-*.js"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
