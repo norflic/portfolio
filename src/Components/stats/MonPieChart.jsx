@@ -15,7 +15,7 @@ export default function MonPieChart({selectedProjects}) {
     }
 
     return (
-            <div id="pieChart">
+            <div id="pieChart" >
                 <h2 className="text-l font-bold mb-4 text-center">
                     Temps passé par projet
                 </h2>

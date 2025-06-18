@@ -1,7 +1,7 @@
 import {Bar, BarChart, Tooltip, XAxis, YAxis,} from 'recharts';
 
 
-export default function MonBarChart({selectedCategorie}) {
+export default function BarChartCompetences({selectedCategorie}) {
     let dataBar = [];
 
 

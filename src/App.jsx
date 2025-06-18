@@ -161,7 +161,7 @@ function App() {
     return (
         <>
             <Header></Header>
-            <body className="bg-[url('/portfolio/projects_img/test.avif')] bg-cover bg-center bg-no-repeat">
+            <body className=" bg-[url('/portfolio/projects_img/test.avif')] bg-cover bg-center bg-no-repeat">
             <div>
                 <MaPage></MaPage>
             </div>

@@ -1,7 +1,7 @@
 export default function Header() {
     return (
         <>
-            <header className="fixed w-full h-20 bg-black/80 flex justify-center ">
+            <header className="fixed w-full h-20 bg-black/80 flex justify-center z-50 ">
                 <nav className="flex top-0 right-0  justify-center items-center my-2 gap-12 ">
                     <button className="dark_outline" id="btn_web">Web</button>
                     <div className="h-6 w-px bg-gray-300"></div> {/* barre verticale */}
