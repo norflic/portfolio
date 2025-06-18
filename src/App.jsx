@@ -13,7 +13,7 @@ function App() {
                 lienSite: "http://p2301438.pages.univ-lyon1.fr/sae-1.05-recueil-des-besoins/",
                 note:4,
                 description:
-                    "Nous devions faire un site web sans contraintes principales mais étions limités car nous n'avions pas encore vu le JS. Nous avons tout de même réussi à afficher un bandeau déroulant.",
+                    "Nous devions faire un site web sans contrainte principales mais nous étions limités car nous n'avions pas encore étudié le JS. Nous avons tout de même réussi à afficher un bandeau déroulant avec uniquement du html et css.",
                 data: {
                     time: 10,
                 },
@@ -24,7 +24,7 @@ function App() {
                 lienSite: "https://challenger.host/",
                 // TODO : a la place, mettre un alert qui dit: ce site est en maintenance
                 description:
-                    "Ce site est le résultat d'un an de travail. Il a été fait en React. L'objectif était de permettre à des joueurs de basket de s'organiser pour se retrouver sur un terrain.",
+                    "Ce site est le résultat d'un an de travail. Il a été fait en React. L'objectif était de permettre à des joueurs de basket de s'organiser pour se retrouver sur un terrain et échanger entre eux.",
                 note:3,
                 data: {
                     time: 80,
@@ -36,7 +36,7 @@ function App() {
                 lienSite: "https://challenger.host/",
                 // TODO : a la place, mettre un alert qui dit: ce site est en maintenance
                 description:
-                    "Ce site a été le premier à être réalisé à l'aide de symfony et certainement pas le dernier. Il est l'un des projets les plus complets, de part so style graphique très travaillé et grâce au temps passé.",
+                    "Ce site a été le premier à être réalisé à l'aide de symfony et ça ne sera certainement pas le dernier. Il est l'un des projets les plus complets, de part son style graphique très travaillé et pr le temps passé.",
                 note:5,
                 data: {
                     time: 15,
@@ -58,17 +58,17 @@ function App() {
                 title: "Snake",
                 image: "/portfolio/projects_img/snake.png",
                 description:
-                    "Pour un cours d'anglais, comme projet, nous avons eu l'idée de tous faire un mini jeu puis de les rassembler",
+                    "Pour un projet libre en anglais, nous avons eu l'idée de créer des minijeux et de les rassembler en un projet. Les autres projets sont un brickbreaker, un pacman et un bomberman",
                 note:5,
                 data: {
                     time: 50,
                 },
             },
             {
-                title: "Tours d'Hanoi",
+                title: "Tours d'Hanoï",
                 image: "/portfolio/projects_img/tours_hanoi.png",
                 description:
-                    "Pour un cours d'anglais, comme projet, nous avons eu l'idée de tous faire un mini jeu puis de les rassembler",
+                    "Pour un projet de qualité dev, nous devions utiliser des structures de données vues en cours et nous avons créé ce mini-jeu inspiré du casse tête des tours d'hanoï",
                 note:5,
                 data: {
                     time: 50,
@@ -77,21 +77,21 @@ function App() {
         ],
         projetsPersos : [
             {
-                title: "Site de plongée",
+                title: "Site de plongée sous-marine",
                 image: "/portfolio/projects_img/image_indisponible.png",
                 description:
-                    "Ce site m'a été demandé par un proche. Je l'ai fait avec plaisir pour participer à la vie associative du club de plongée de Lyon",
+                    "Ce site m'a été demandé par un proche. Je l'ai fait avec plaisir pour participer à la vie associative du club de plongée d'Agay. L'objectif de ce site était de permettre une meilleure administration des papiers des plongeurs par le directeur de plongée",
                 note:4,
                 data: {
                     time: 25,
                 },
             },
             {
-                title: "portfolio",
+                title: "Portfolio",
                 image: "/portfolio/projects_img/portfolio.png",
                 lienSite: "#",
                 description:
-                    "Ce site est le résultat d'un an de travail. Il a été fait en React. L'objectif était de permettre à des joueurs de basket de s'organiser pour se retrouver sur un terrain.",
+                    "La réalisation de ce portfolio me permet de me présenter, de mettre en valeur le travail réalisé pendant ma scolarité et également de présenter les projets personnels que j'ai pu mettre en place. Ce portfolio pourra être un support pour des employeurs ou encore dans ma démarche de recherche d'apprentissage.",
                 note:4,
                 data: {
                     time: 30,
@@ -100,10 +100,10 @@ function App() {
         ],
         mobile : [
             {
-                title: "Livraison",
+                title: "Application de livraison",
                 image: "/portfolio/projects_img/kotlin.png",
                 description:
-                    "Livraison a été mon premier projet sur Kotlin. je me suis beaucoup inversi dedans, ce qui a fait que j'ai rapidement maitrisé les bases de ce langage",
+                    "Cette application de Livraison a été mon premier projet sur Kotlin. Je me suis beaucoup inversi, ce qui m'a permit de rapidement maîtriser les bases de ce langage.",
                 note:5,
                 data: {
                     time: 30,

@@ -31,7 +31,7 @@ export default function MonBarChart({selectedCategorie}) {
             break;
         case 'mobile':
             dataBar = [
-                {name: 'Kotlin', maitrisé: 40, non_maitrisé: 15},
+                {name: 'Kotlin', maitrisé: 40, non_maitrisé: 60},
             ];
             break;
         default :
@@ -48,7 +48,7 @@ export default function MonBarChart({selectedCategorie}) {
     return (
         <div id="barChart">
             <h2 className="text-xl font-bold mb-4 text-center">
-                niveau de maitrîse
+                Niveau de maitrîse
             </h2>
             <BarChart
                 width={600}

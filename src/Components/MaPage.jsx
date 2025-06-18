@@ -8,7 +8,7 @@ export default function MaPage() {
                 {/*TODO: developper infos*/}
                 <h1>Nils Derrien</h1>
                 <h2>2ème année d'IUT info</h2>
-                <h2>spécialité : RA</h2>
+                <h2>Spécialité : RA</h2>
                 <button className="flex flex-row whitespace-nowrap" id="btn_cv">
                     <a href="/portfolio/CV_Nils_DERRIEN.pdf" download="CV de nils Derrien.pdf">
                         Télechargez mon CV
@@ -17,21 +17,19 @@ export default function MaPage() {
                 </button>
             </span>
             <span className="flex-[1.2] flex flex-col gap-6 justify-center items-center text-center">
-                <span className="">à propos de moi</span>
+                <span className=""> propos de moi</span>
                 <p className="flex flex-col items-center mb-0">
                     <span>
                         Actuellement en recherche d'une alternance pour ma 3ème année de BUT.
                     </span>
                     <span>
                         Je suis quelqu'un de sérieux, impliqué et je suis toujours enthousiaste à <br/> l'idée de vivre de nouvelles expériences.
-
                     </span>
                     <span>
-                        Mes activités préférées sont le vélo, la plngée et l'apéro
+                        Mes activités préférées sont le vélo, la plongée sous marine.
                     </span>
                     <span>
-                        Je vous propose de découvrir mes projets par vous même
-
+                        Je vous propose de découvrir mes projets en parcourant mon portfolio
                     </span>
                 </p>
             </span>
