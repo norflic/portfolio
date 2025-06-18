@@ -5,6 +5,7 @@ import Stats from "./Components/stats/Stats.jsx";
 import {useEffect, useState} from "react";
 
 function App() {
+    // rtest
     const projects = {
         web: [
             {
