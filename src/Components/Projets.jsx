@@ -1,4 +1,5 @@
 import ProjectCard from "./ProjectCard.jsx";
+import clsx from "clsx";
 
 export default function Projets({selectedProjects}) {
 
@@ -16,7 +17,10 @@ export default function Projets({selectedProjects}) {
                                     key={`${index}-${i}`}
                                     src={i < oneProject.note ? "/portfolio/projects_img/coeur.png" : "/portfolio/projects_img/coeur_vide.png"}
                                     alt={i < oneProject.note ? "coeur plein" : "coeur vide"}
-                                    className="w-10 h-10 mx-0.5"
+                                    className={clsx(
+                                        "mx-0.5 transition-all duration-300",
+                                        i > oneProject.note-1 ? "w-8 h-8 translate-x-[-0px] translate-y-[3px]" : "w-10 h-10"
+                                    )}
                                 />
                             ))}
                         </div>

@@ -7,7 +7,7 @@ export default function Stats({selectedProjects, selectedCategorie}) {
     return (
         <>
             <h1 className="text-center">
-                statistiques
+                Statistiques
             </h1>
             <div className="flex flex-row">
                 <MonPieChart selectedProjects={selectedProjects}></MonPieChart>
