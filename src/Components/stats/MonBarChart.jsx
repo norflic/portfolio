@@ -8,39 +8,39 @@ export default function MonBarChart({selectedCategorie}) {
     switch (selectedCategorie) {
         case 'web':
             dataBar = [
-                {name: 'js', maitrisé: 85, non_maitrisé: 15},
-                {name: 'html', maitrisé: 95, non_maitrisé: 5},
-                {name: 'css', maitrisé: 40, non_maitrisé: 60},
-                {name: 'symfony', maitrisé: 70, non_maitrisé: 30},
-                {name: 'react', maitrisé: 65, non_maitrisé: 35},
+                {name: 'JS', maitrisé: 85, non_maitrisé: 15},
+                {name: 'HTML', maitrisé: 95, non_maitrisé: 5},
+                {name: 'CSS', maitrisé: 40, non_maitrisé: 60},
+                {name: 'Symfony', maitrisé: 70, non_maitrisé: 30},
+                {name: 'React', maitrisé: 65, non_maitrisé: 35},
             ];
             break;
-        case 'applications':
+        case 'appli':
             dataBar = [
-                {name: 'java', maitrisé: 85, non_maitrisé: 15},
-                {name: 'python', maitrisé: 95, non_maitrisé: 5},
-                {name: 'c', maitrisé: 30, non_maitrisé: 70},
+                {name: 'Java', maitrisé: 85, non_maitrisé: 15},
+                {name: 'Python', maitrisé: 95, non_maitrisé: 5},
+                {name: 'C', maitrisé: 30, non_maitrisé: 70},
             ];
             break;
         case 'projetsPersos':
             dataBar = [
-                {name: 'html', maitrisé: 95, non_maitrisé: 5},
-                {name: 'css', maitrisé: 40, non_maitrisé: 60},
-                {name: 'vue', maitrisé: 60, non_maitrisé: 40},
+                {name: 'HTML', maitrisé: 95, non_maitrisé: 5},
+                {name: 'CSS', maitrisé: 40, non_maitrisé: 60},
+                {name: 'Vue', maitrisé: 60, non_maitrisé: 40},
             ];
             break;
         case 'mobile':
             dataBar = [
-                {name: 'kotlin', maitrisé: 40, non_maitrisé: 15},
+                {name: 'Kotlin', maitrisé: 40, non_maitrisé: 15},
             ];
             break;
         default :
             dataBar = [
-                {name: 'js', maitrisé: 85, non_maitrisé: 15},
-                {name: 'html', maitrisé: 95, non_maitrisé: 5},
-                {name: 'css', maitrisé: 40, non_maitrisé: 60},
-                {name: 'symfony', maitrisé: 70, non_maitrisé: 30},
-                {name: 'react', maitrisé: 65, non_maitrisé: 35},
+                {name: 'JS', maitrisé: 85, non_maitrisé: 15},
+                {name: 'HTML', maitrisé: 95, non_maitrisé: 5},
+                {name: 'CSS', maitrisé: 40, non_maitrisé: 60},
+                {name: 'Symfony', maitrisé: 70, non_maitrisé: 30},
+                {name: 'React', maitrisé: 65, non_maitrisé: 35},
             ];
     }
 

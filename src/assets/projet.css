@@ -26,4 +26,12 @@
   background-color: #1B3A66;
 }
 
+.dark_outline {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  font-size: large;
+}
+.dark_outline * {
+  color: white;
+}
+
 /*# sourceMappingURL=projet.css.map */

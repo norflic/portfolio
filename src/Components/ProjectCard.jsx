@@ -19,7 +19,7 @@ export default function ProjectCard({ DisplayedProject }) {
                         lien vers {DisplayedProject.title}
                     </a>
                 )}
-                <p>{DisplayedProject.description}</p>
+                <p className="max-w-md whitespace-normal">{DisplayedProject.description}</p>
             </div>
     );
 }

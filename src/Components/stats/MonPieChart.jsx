@@ -16,8 +16,8 @@ export default function MonPieChart({selectedProjects}) {
 
     return (
             <div id="pieChart">
-                <h2 className="text-xl font-bold mb-4 text-center">
-                    Répartition des projets
+                <h2 className="text-l font-bold mb-4 text-center">
+                    temps passé par projet
                 </h2>
                 <PieChart width={400} height={300}>
                     <Pie

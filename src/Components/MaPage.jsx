@@ -9,9 +9,9 @@ export default function MaPage() {
                 <h1>Nils Derrien</h1>
                 <h2>2ème année d'IUT info</h2>
                 <h2>spécialité : RA</h2>
-                <button className="flex flex-row flex1" id="btn_cv">
+                <button className="flex flex-row whitespace-nowrap" id="btn_cv">
                     <a href="/portfolio/CV_Nils_DERRIEN.pdf" download="CV de nils Derrien.pdf">
-                        Télecharger mon CV
+                        Télechargez mon CV
                         <img src="/portfolio/icone.svg" alt={""}/>
                     </a>
                 </button>

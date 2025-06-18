@@ -7,10 +7,13 @@ body {
 
     /*color: white;*/
 }
-a {
+a, nav button{
     color: #A9B8C6;
     text-decoration: underline;
+    font-size: large;
 }
-a:hover {
+
+a:hover, nav button:hover {
     color: #74C69D;
+    cursor: pointer;
 }

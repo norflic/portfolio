@@ -5,7 +5,7 @@ export default function Projets({selectedProjects}) {
     return (
         <div className="flex flex-col justify-between">
 
-            <div className="flex flex-row gap-10 mx-10">
+            <div className="flex flex-row gap-10 mx-10 justify-center ">
                 {selectedProjects.map((oneProject, index) => (
                     <div className=" flex flex-col items-center ">
                         <ProjectCard key={index} DisplayedProject={oneProject}/>

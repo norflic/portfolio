@@ -4,7 +4,6 @@
   border-radius: 1.5rem;
   padding: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  //max-width: 500px;
   transition: background-color 0.3s ease;
   margin: 1rem auto;
 
@@ -27,4 +26,13 @@
 }
 .card:hover {
   background-color: #1B3A66;
+}
+
+.dark_outline {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  font-size: large;
+
+  * {
+    color: white;
+  }
 }

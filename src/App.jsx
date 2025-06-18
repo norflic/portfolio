@@ -56,7 +56,7 @@ function App() {
             },
             {
                 title: "Snake",
-                image: "/portfolio/projects_img/moove_green.png",
+                image: "/portfolio/projects_img/snake.png",
                 description:
                     "Pour un cours d'anglais, comme projet, nous avons eu l'idée de tous faire un mini jeu puis de les rassembler",
                 note:5,
