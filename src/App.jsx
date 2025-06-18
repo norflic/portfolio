@@ -9,7 +9,7 @@ function App() {
         web: [
             {
                 title: "Moove green",
-                image: "/portfolio/projetcts_img/moove_green.png",
+                image: "/portfolio/projects_img/moove_green.png",
                 lienSite: "http://p2301438.pages.univ-lyon1.fr/sae-1.05-recueil-des-besoins/",
                 note:4,
                 description:
@@ -20,7 +20,7 @@ function App() {
             },
             {
                 title: "Challenger",
-                image: "/portfolio/projetcts_img/challenger_main_menu.png",
+                image: "/portfolio/projects_img/challenger_main_menu.png",
                 lienSite: "https://challenger.host/",
                 // TODO : a la place, mettre un alert qui dit: ce site est en maintenance
                 description:
@@ -32,7 +32,7 @@ function App() {
             },
             {
                 title: "Blog Symfony",
-                image: "/portfolio/projetcts_img/image_indisponible.png",
+                image: "/portfolio/projects_img/image_indisponible.png",
                 lienSite: "https://challenger.host/",
                 // TODO : a la place, mettre un alert qui dit: ce site est en maintenance
                 description:
@@ -46,7 +46,7 @@ function App() {
         applications : [
             {
                 title: "SAE aéroport",
-                image: "/portfolio/projetcts_img/sae_aeroport.png",
+                image: "/portfolio/projects_img/sae_aeroport.png",
                 description:
                     "Dans ce projet, nous devions, à partir de fichiers contenant des données de vols, afficher ces données et les traiter en appliquant le meilleur algorithme possible.",
                 note:3,
@@ -56,7 +56,7 @@ function App() {
             },
             {
                 title: "Snake",
-                image: "/portfolio/projetcts_img/moove_green.png",
+                image: "/portfolio/projects_img/moove_green.png",
                 // lienSite: "http://p2301438.pages.univ-lyon1.fr/sae-1.05-recueil-des-besoins/",
                 description:
                     "Pour un cours d'anglais, comme projet, nous avons eu l'idée de tous faire un mini jeu puis de les rassembler",
@@ -67,7 +67,7 @@ function App() {
             },
             {
                 title: "Tours d'Hanoi",
-                image: "/portfolio/projetcts_img/tours_hanoi.png",
+                image: "/portfolio/projects_img/tours_hanoi.png",
                 // lienSite: "http://p2301438.pages.univ-lyon1.fr/sae-1.05-recueil-des-besoins/",
                 description:
                     "Pour un cours d'anglais, comme projet, nous avons eu l'idée de tous faire un mini jeu puis de les rassembler",
@@ -80,7 +80,7 @@ function App() {
         projetsPersos : [
             {
                 title: "Site de plongée",
-                image: "/portfolio/projetcts_img/image_indisponible.png",
+                image: "/portfolio/projects_img/image_indisponible.png",
                 description:
                     "Ce site m'a été demandé par un proche. Je l'ai fait avec plaisir pour participer à la vie associative du club de plongée de Lyon",
                 note:4,
@@ -90,7 +90,7 @@ function App() {
             },
             {
                 title: "portfolio",
-                image: "/portfolio/projetcts_img/portfolio.png",
+                image: "/portfolio/projects_img/portfolio.png",
                 lienSite: "#",
                 description:
                     "Ce site est le résultat d'un an de travail. Il a été fait en React. L'objectif était de permettre à des joueurs de basket de s'organiser pour se retrouver sur un terrain.",
@@ -103,7 +103,7 @@ function App() {
         mobile : [
             {
                 title: "Livraison",
-                image: "/portfolio/projetcts_img/image_indisponible.png",
+                image: "/portfolio/projects_img/image_indisponible.png",
                 description:
                     "Livraison a été mon premier projet sur Kotlin. je me suis beaucoup inversi dedans, ce qui a fait que j'ai rapidement maitrisé les bases de ce langage",
                 note:5,
