@@ -7,10 +7,10 @@ export default function Projets({selectedProjects}) {
 
             <div className="flex flex-row gap-10 mx-10">
                 {selectedProjects.map((oneProject, index) => (
-                    <div style={{display: 'flex', flexDirection: 'column'}}>
+                    <div className=" flex flex-col items-center ">
                         <ProjectCard key={index} DisplayedProject={oneProject}/>
-
-                        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                        {/*TODO : easter egg coueurs de meinceraft*/}
+                        <div className="flex flex-row  ">
                             {Array.from({length: 5}).map((_, i) => (
                                 <img
                                     key={`${index}-${i}`}

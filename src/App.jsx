@@ -57,7 +57,6 @@ function App() {
             {
                 title: "Snake",
                 image: "/portfolio/projects_img/moove_green.png",
-                // lienSite: "http://p2301438.pages.univ-lyon1.fr/sae-1.05-recueil-des-besoins/",
                 description:
                     "Pour un cours d'anglais, comme projet, nous avons eu l'idée de tous faire un mini jeu puis de les rassembler",
                 note:5,
@@ -68,7 +67,6 @@ function App() {
             {
                 title: "Tours d'Hanoi",
                 image: "/portfolio/projects_img/tours_hanoi.png",
-                // lienSite: "http://p2301438.pages.univ-lyon1.fr/sae-1.05-recueil-des-besoins/",
                 description:
                     "Pour un cours d'anglais, comme projet, nous avons eu l'idée de tous faire un mini jeu puis de les rassembler",
                 note:5,
@@ -103,7 +101,7 @@ function App() {
         mobile : [
             {
                 title: "Livraison",
-                image: "/portfolio/projects_img/image_indisponible.png",
+                image: "/portfolio/projects_img/kotlin.png",
                 description:
                     "Livraison a été mon premier projet sur Kotlin. je me suis beaucoup inversi dedans, ce qui a fait que j'ai rapidement maitrisé les bases de ce langage",
                 note:5,
@@ -163,23 +161,17 @@ function App() {
     return (
         <>
             <Header></Header>
+            <body className="bg-[url('/portfolio/projects_img/test.avif')] bg-cover bg-center bg-no-repeat">
             <div>
                 <MaPage></MaPage>
             </div>
 
             <div id="conteneurProjets">
-                <nav className="flex justify-center items-center my-2 gap-12">
-                    <button id="btn_web">Web</button>
-                    <div className="h-6 w-px bg-gray-300"></div> {/* barre verticale */}
-                    <button id="btn_appli">Applications</button>
-                    <div className="h-6 w-px bg-gray-300"></div> {/* barre verticale */}
-                    <button id="btn_projets_persos">Projets persos</button>
-                    <div className="h-6 w-px bg-gray-300"></div> {/* barre verticale */}
-                    <button id="btn_mobile">Mobile</button>
-                </nav>
                 <Projets selectedProjects={selectedProjects} />
             </div>
             <Stats selectedProjects={selectedProjects} selectedCategorie={selectedCategorie}/>
+            </body>
+
         </>
     )
 }
