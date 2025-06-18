@@ -14,7 +14,7 @@ export default function Projets({selectedProjects}) {
                             {Array.from({length: 5}).map((_, i) => (
                                 <img
                                     key={`${index}-${i}`}
-                                    src={i < oneProject.note ? "public/projetcts_img/coeur.png" : "public/projetcts_img/coeur_vide.png"}
+                                    src={i < oneProject.note ? "/portfolio/projetcts_img/coeur.png" : "/portfolio/projetcts_img/coeur_vide.png"}
                                     alt={i < oneProject.note ? "coeur plein" : "coeur vide"}
                                     className="w-10 h-10 mx-0.5"
                                 />
