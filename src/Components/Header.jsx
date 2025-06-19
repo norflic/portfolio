@@ -10,6 +10,8 @@ export default function Header() {
                     <button className="dark_outline" id="btn_projets_persos">Projets persos</button>
                     <div className="h-6 w-px bg-gray-300"></div> {/* barre verticale */}
                     <button className="dark_outline" id="btn_mobile">Mobile</button>
+                    <div className="h-6 w-px bg-gray-300"></div> {/* barre verticale */}
+                    <button className="dark_outline" id="btn_entreprise">Entreprise</button>
                 </nav>
             </header>
             <div className="h-20">

@@ -109,6 +109,18 @@ function App() {
                     time: 30,
                 },
             },
+        ],
+        entreprise : [
+            {
+                title: "Catalogue interractif",
+                image: "/portfolio/projects_img/catalogue.png",
+                description:
+                    "Ce site est le premier réalisé en entreprise. Il contient un catalogue interractif, un configurateur de produits, ainsi qu'une page pour créer des devis de manière simplifiée. Ce projet a été réalisé seul, de la conception de la base de données à la mise en production.",
+                note:5,
+                data: {
+                    time: 330,
+                },
+            },
         ]
 
     };
@@ -129,6 +141,7 @@ function App() {
         const btnAppli = document.getElementById("btn_appli");
         const btnProjetsPersos = document.getElementById("btn_projets_persos");
         const btnMobile= document.getElementById("btn_mobile");
+        const btnEntreprise= document.getElementById("btn_entreprise");
 
         btnWeb.addEventListener("click", () => {
             console.log("web");
@@ -149,6 +162,11 @@ function App() {
             console.log("mobile");
             setSelectedProjects(projects.mobile)
             setSelectedCategorie("mobile")
+        });
+        btnEntreprise.addEventListener("click", () => {
+            console.log("entreprise");
+            setSelectedProjects(projects.entreprise)
+            setSelectedCategorie("entreprise")
         });
 
         // Optionnel : nettoyage au démontage

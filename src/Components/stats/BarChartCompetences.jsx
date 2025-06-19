@@ -34,6 +34,13 @@ export default function BarChartCompetences({selectedCategorie}) {
                 {name: 'Kotlin', maitrisé: 40, non_maitrisé: 60},
             ];
             break;
+        case 'entreprise':
+            dataBar = [
+                {name: 'Symfony', maitrisé: 70, non_maitrisé: 30},
+                {name: 'PHP', maitrisé: 70, non_maitrisé: 30},
+                {name: 'bash', maitrisé: 20, non_maitrisé: 80},
+            ];
+            break;
         default :
             dataBar = [
                 {name: 'JS', maitrisé: 85, non_maitrisé: 15},
