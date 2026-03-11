@@ -1,7 +1,6 @@
-import MonPieChart from "./MonPieChart.jsx";
-import BarChartCompetences from "./BarChartCompetences.jsx";
-import {RadarChart} from "recharts";
-import MyRadarChart from "./MyRadarChart.jsx";
+import MonPieChart from "./MonPieChart";
+import BarChartCompetences from "./BarChartCompetences";
+import MyRadarChart from "./MyRadarChart";
 
 export default function Stats({selectedProjects, selectedCategorie}) {
     // console.log("selectedProjects = ");

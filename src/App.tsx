@@ -1,11 +1,12 @@
-import Header from "./Components/Header.jsx";
-import MaPage from "./Components/MaPage.jsx";
-import Projets from "./Components/Projets.jsx";
-import Stats from "./Components/stats/Stats.jsx";
+import Header from "./Components/Header";
+import MaPage from "./Components/MaPage";
+import Projets from "./Components/Projets";
+import Stats from "./Components/stats/Stats";
 import {useEffect, useState} from "react";
+import {Projects, ProjectCategory} from "./Models/Project";
 
 function App() {
-    const projects = {
+    const projects: Projects = {
         web: [
             {
                 title: "Moove green",
@@ -124,15 +125,8 @@ function App() {
         ]
 
     };
-    const [selectedProjects, setSelectedProjects] = useState(projects.web);
-    const getCategorieFromProjects = (projectsList) => {
-        return Object.keys(projects).find(
-            (key) => projects[key] === projectsList
-        );
-    };
-    const [selectedCategorie, setSelectedCategorie] = useState(() =>
-        getCategorieFromProjects(projects.web)
-    );
+    const [selectedProjects, setSelectedProjects] = useState(projects[ProjectCategory.Web as keyof typeof projects]);
+    const [selectedCategorie, setSelectedCategorie] = useState<ProjectCategory>(ProjectCategory.Web);
     console.log(selectedProjects);
     console.log(selectedCategorie);
 
@@ -143,37 +137,32 @@ function App() {
         const btnMobile= document.getElementById("btn_mobile");
         const btnEntreprise= document.getElementById("btn_entreprise");
 
-        btnWeb.addEventListener("click", () => {
+        btnWeb?.addEventListener("click", () => {
             console.log("web");
-            setSelectedProjects(projects.web)
-            setSelectedCategorie("web")
+            setSelectedProjects(projects[ProjectCategory.Web])
+            setSelectedCategorie(ProjectCategory.Web)
         });
-        btnAppli.addEventListener("click", () => {
+        btnAppli?.addEventListener("click", () => {
             console.log("appli");
-            setSelectedProjects(projects.applications)
-            setSelectedCategorie("appli")
+            setSelectedProjects(projects[ProjectCategory.Applications])
+            setSelectedCategorie(ProjectCategory.Applications)
         });
-        btnProjetsPersos.addEventListener("click", () => {
+        btnProjetsPersos?.addEventListener("click", () => {
             console.log("projetsPersos");
-            setSelectedProjects(projects.projetsPersos)
-            setSelectedCategorie("projetsPersos")
+            setSelectedProjects(projects[ProjectCategory.ProjetsPersos])
+            setSelectedCategorie(ProjectCategory.ProjetsPersos)
         });
-        btnMobile.addEventListener("click", () => {
+        btnMobile?.addEventListener("click", () => {
             console.log("mobile");
-            setSelectedProjects(projects.mobile)
-            setSelectedCategorie("mobile")
+            setSelectedProjects(projects[ProjectCategory.Mobile])
+            setSelectedCategorie(ProjectCategory.Mobile)
         });
-        btnEntreprise.addEventListener("click", () => {
+        btnEntreprise?.addEventListener("click", () => {
             console.log("entreprise");
-            setSelectedProjects(projects.entreprise)
-            setSelectedCategorie("entreprise")
+            setSelectedProjects(projects[ProjectCategory.Entreprise])
+            setSelectedCategorie(ProjectCategory.Entreprise)
         });
 
-        // Optionnel : nettoyage au démontage
-        // return () => {
-        //     btnWeb?.removeEventListener("click", () => {});
-        //     btnAppli?.removeEventListener("click", () => {});
-        // };
     }, []);
 
     return (

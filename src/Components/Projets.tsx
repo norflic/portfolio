@@ -1,4 +1,4 @@
-import ProjectCard from "./ProjectCard.jsx";
+import ProjectCard from "./ProjectCard";
 import clsx from "clsx";
 
 export default function Projets({selectedProjects}) {
