@@ -1,8 +1,14 @@
 import MonPieChart from "./MonPieChart";
 import BarChartCompetences from "./BarChartCompetences";
 import MyRadarChart from "./MyRadarChart";
+import {Project, ProjectCategory} from "../../Models/Project.ts";
 
-export default function Stats({selectedProjects, selectedCategorie}) {
+export type StatsProps = {
+    selectedProjects: Project[];
+    selectedCategorie: ProjectCategory;
+}
+
+export default function Stats({selectedProjects, selectedCategorie}: StatsProps) {
     // console.log("selectedProjects = ");
     // console.log(selectedProjects);
     return (

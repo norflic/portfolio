@@ -1,25 +1,30 @@
 import '../assets/projet.css';
+import {Project} from "../Models/Project.ts";
 
-export default function ProjectCard({ DisplayedProject }) {
-    if (!DisplayedProject) return null;
+export type ProjectCardProps = {
+    displayedProject: Project;
+}
+
+export default function ProjectCard({ displayedProject}: ProjectCardProps) {
+    if (!displayedProject) return null;
     return (
             <div className="card flex-1 flex flex-col justify-between  items-center text-center  h-96">
                 <span>
 
-                    <h3>{DisplayedProject.title}</h3>
+                    <h3>{displayedProject.title}</h3>
 
                     <span className="w-full aspect-video overflow-hidden mb-2">
-                        {DisplayedProject.image &&
-                            <img src={DisplayedProject.image} alt='image du projet' className="w-full max-h-3/4  object-contain"/>
+                        {displayedProject.image &&
+                            <img src={displayedProject.image} alt='image du projet' className="w-full max-h-3/4  object-contain"/>
                         }
                     </span>
                 </span>
-                {DisplayedProject.lienSite && (
-                    <a href={DisplayedProject.lienSite} target="_blank" rel="noopener noreferrer">
-                        lien vers {DisplayedProject.title}
+                {displayedProject.lienSite && (
+                    <a href={displayedProject.lienSite} target="_blank" rel="noopener noreferrer">
+                        lien vers {displayedProject.title}
                     </a>
                 )}
-                <p className="max-w-md whitespace-normal">{DisplayedProject.description}</p>
+                <p className="max-w-md whitespace-normal">{displayedProject.description}</p>
             </div>
     );
 }

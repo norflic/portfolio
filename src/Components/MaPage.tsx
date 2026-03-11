@@ -1,3 +1,5 @@
+import BtnDownload from "./BtnDownload.tsx";
+
 export default function MaPage() {
     return (
         <div id="pres_page" className="flex flex-row max-h-80">
@@ -9,12 +11,7 @@ export default function MaPage() {
                 <h1>Nils Derrien</h1>
                 <h2>2ème année d'IUT info</h2>
                 <h2>Spécialité : RA</h2>
-                <button className="flex flex-row whitespace-nowrap" id="btn_cv">
-                    <a href="/portfolio/CV_Nils_DERRIEN.pdf" download="CV de nils Derrien.pdf">
-                        Télechargez mon CV
-                        <img src="/portfolio/icone.svg" alt={""}/>
-                    </a>
-                </button>
+                <BtnDownload></BtnDownload>
             </span>
             <span className="flex-[1.2] flex flex-col gap-6 justify-center items-center text-center">
                 <span className="">A propos de moi</span>

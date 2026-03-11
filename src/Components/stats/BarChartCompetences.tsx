@@ -1,53 +1,57 @@
 import {Bar, BarChart, Tooltip, XAxis, YAxis,} from 'recharts';
+import {ProjectCategory} from "../../Models/Project.ts";
 
+export type BarChartCompetencesProps = {
+    selectedCategorie: ProjectCategory;
+}
 
-export default function BarChartCompetences({selectedCategorie}) {
+export default function BarChartCompetences({selectedCategorie}: BarChartCompetencesProps) {
     let dataBar = [];
 
 
     switch (selectedCategorie) {
         case 'web':
             dataBar = [
-                {name: 'JS', maitrisé: 85, non_maitrisé: 15},
-                {name: 'HTML', maitrisé: 95, non_maitrisé: 5},
-                {name: 'CSS', maitrisé: 40, non_maitrisé: 60},
-                {name: 'Symfony', maitrisé: 70, non_maitrisé: 30},
-                {name: 'React', maitrisé: 65, non_maitrisé: 35},
+                {name: 'JS', maitrise: 85, non_maitrise: 15},
+                {name: 'HTML', maitrise: 95, non_maitrise: 5},
+                {name: 'CSS', maitrise: 40, non_maitrise: 60},
+                {name: 'Symfony', maitrise: 70, non_maitrise: 30},
+                {name: 'React', maitrise: 65, non_maitrise: 35},
             ];
             break;
-        case 'appli':
+        case 'applications':
             dataBar = [
-                {name: 'Java', maitrisé: 85, non_maitrisé: 15},
-                {name: 'Python', maitrisé: 95, non_maitrisé: 5},
-                {name: 'C', maitrisé: 30, non_maitrisé: 70},
+                {name: 'Java', maitrise: 85, non_maitrise: 15},
+                {name: 'Python', maitrise: 95, non_maitrise: 5},
+                {name: 'C', maitrise: 30, non_maitrise: 70},
             ];
             break;
         case 'projetsPersos':
             dataBar = [
-                {name: 'HTML', maitrisé: 95, non_maitrisé: 5},
-                {name: 'CSS', maitrisé: 40, non_maitrisé: 60},
-                {name: 'Vue', maitrisé: 60, non_maitrisé: 40},
+                {name: 'HTML', maitrise: 95, non_maitrise: 5},
+                {name: 'CSS', maitrise: 40, non_maitrise: 60},
+                {name: 'Vue', maitrise: 60, non_maitrise: 40},
             ];
             break;
         case 'mobile':
             dataBar = [
-                {name: 'Kotlin', maitrisé: 40, non_maitrisé: 60},
+                {name: 'Kotlin', maitrise: 40, non_maitrise: 60},
             ];
             break;
         case 'entreprise':
             dataBar = [
-                {name: 'Symfony', maitrisé: 70, non_maitrisé: 30},
-                {name: 'PHP', maitrisé: 70, non_maitrisé: 30},
-                {name: 'bash', maitrisé: 20, non_maitrisé: 80},
+                {name: 'Symfony', maitrise: 70, non_maitrise: 30},
+                {name: 'PHP', maitrise: 70, non_maitrise: 30},
+                {name: 'bash', maitrise: 20, non_maitrise: 80},
             ];
             break;
         default :
             dataBar = [
-                {name: 'JS', maitrisé: 85, non_maitrisé: 15},
-                {name: 'HTML', maitrisé: 95, non_maitrisé: 5},
-                {name: 'CSS', maitrisé: 40, non_maitrisé: 60},
-                {name: 'Symfony', maitrisé: 70, non_maitrisé: 30},
-                {name: 'React', maitrisé: 65, non_maitrisé: 35},
+                {name: 'JS', maitrise: 85, non_maitrise: 15},
+                {name: 'HTML', maitrise: 95, non_maitrise: 5},
+                {name: 'CSS', maitrise: 40, non_maitrise: 60},
+                {name: 'Symfony', maitrise: 70, non_maitrise: 30},
+                {name: 'React', maitrise: 65, non_maitrise: 35},
             ];
     }
 
@@ -90,14 +94,14 @@ export default function BarChartCompetences({selectedCategorie}) {
                     }}
                 />
                 <Bar
-                    dataKey="maitrisé"
+                    dataKey="maitrise"
                     stackId="a"
                     fill="#4ea8de"
                     radius={[10, 0, 0, 10]}
                     barSize={15}
                 />
                 <Bar
-                    dataKey="non_maitrisé"
+                    dataKey="non_maitrise"
                     stackId="a"
                     fill="#f87171"
                     radius={[0, 10, 10, 0]}

@@ -3,7 +3,7 @@ import MaPage from "./Components/MaPage";
 import Projets from "./Components/Projets";
 import Stats from "./Components/stats/Stats";
 import {useEffect, useState} from "react";
-import {Projects, ProjectCategory} from "./Models/Project";
+import {Project, Projects, ProjectCategory} from "./Models/Project";
 
 function App() {
     const projects: Projects = {
@@ -125,7 +125,7 @@ function App() {
         ]
 
     };
-    const [selectedProjects, setSelectedProjects] = useState(projects[ProjectCategory.Web as keyof typeof projects]);
+    const [selectedProjects, setSelectedProjects] = useState<Project[]>(projects[ProjectCategory.Web]);
     const [selectedCategorie, setSelectedCategorie] = useState<ProjectCategory>(ProjectCategory.Web);
     console.log(selectedProjects);
     console.log(selectedCategorie);

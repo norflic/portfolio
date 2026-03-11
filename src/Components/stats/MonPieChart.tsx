@@ -1,10 +1,20 @@
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
+import {Project} from "../../Models/Project.ts";
 
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
-export default function MonPieChart({selectedProjects}) {
-    const dataPie = []
+export type MonPieChartsProps = {
+    selectedProjects: Project[]
+}
+
+type datePieType = {
+    name: string,
+    value: number
+}[]
+
+export default function MonPieChart({selectedProjects}:  MonPieChartsProps) {
+    const dataPie: datePieType = []
     if (Array.isArray(selectedProjects)) {
         selectedProjects.forEach(project => {
             const temps = project.data?.time || 0;
@@ -29,7 +39,7 @@ export default function MonPieChart({selectedProjects}) {
                         dataKey="value"
                         label
                     >
-                        {dataPie.map((entry, index) => (
+                        {dataPie.map((_entry, index) => (
                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                         ))}
                     </Pie>

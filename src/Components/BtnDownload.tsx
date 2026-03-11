@@ -1,11 +1,10 @@
 export default function BtnDownload() {
     return (
-        <button className="flex flex-row flex1" id="btn_cv">
-            <a href="public/CV_Nils_DERRIEN.pdf" download="CV de nils Derrien.pdf">
-                Télecharger mon CV
-
+        <button className="flex flex-row whitespace-nowrap" id="btn_cv">
+            <a href="/portfolio/CV_Nils_DERRIEN.pdf" download="CV de nils Derrien.pdf">
+                Télechargez mon CV
+                <img src="/portfolio/icone.svg" alt={""}/>
             </a>
-            <img src="public/icone.svg" alt={""}/>
         </button>
     )
 }
