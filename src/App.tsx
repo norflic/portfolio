@@ -2,10 +2,12 @@ import Header from "./Components/Header";
 import MaPage from "./Components/MaPage";
 import Projets from "./Components/Projets";
 import Stats from "./Components/stats/Stats";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {Project, Projects, ProjectCategory} from "./Models/Project";
 
 function App() {
+    const preloadedImagesRef = useRef<Set<string>>(new Set());
+
     const projects: Projects = {
         web: [
             {
@@ -33,7 +35,7 @@ function App() {
             },
             {
                 title: "Blog Symfony",
-                image: "/portfolio/projects_img/image_indisponible.png",
+                image: "/portfolio/projects_img/blog_symfony.png",
                 lienSite: "https://challenger.host/",
                 // TODO : a la place, mettre un alert qui dit: ce site est en maintenance
                 description:
@@ -164,6 +166,42 @@ function App() {
         });
 
     }, []);
+
+    useEffect(() => {
+        const preload = (src: string) => {
+            if (!src || preloadedImagesRef.current.has(src)) return;
+
+            const image = new Image();
+            image.src = src;
+            preloadedImagesRef.current.add(src);
+        };
+
+        const currentCategoryImages = projects[selectedCategorie].map((project) => project.image);
+        const allImages = Object.values(projects).flatMap((categoryProjects) =>
+            categoryProjects.map((project) => project.image)
+        );
+
+        const uniqueCurrentImages = Array.from(new Set(currentCategoryImages));
+        const uniqueOtherImages = Array.from(
+            new Set(allImages.filter((src) => !uniqueCurrentImages.includes(src)))
+        );
+
+        // Prioritize images for the currently visible category.
+        uniqueCurrentImages.forEach(preload);
+
+        const delayedTimers: number[] = [];
+        const backgroundStartTimer = window.setTimeout(() => {
+            uniqueOtherImages.forEach((src, index) => {
+                const timerId = window.setTimeout(() => preload(src), index * 120);
+                delayedTimers.push(timerId);
+            });
+        }, 250);
+
+        return () => {
+            window.clearTimeout(backgroundStartTimer);
+            delayedTimers.forEach((timerId) => window.clearTimeout(timerId));
+        };
+    }, [selectedCategorie]);
 
     return (
         <>

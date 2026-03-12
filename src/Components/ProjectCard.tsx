@@ -15,7 +15,13 @@ export default function ProjectCard({ displayedProject}: ProjectCardProps) {
 
                     <span className="w-full aspect-video overflow-hidden mb-2">
                         {displayedProject.image &&
-                            <img src={displayedProject.image} alt='image du projet' className="w-full max-h-3/4  object-contain"/>
+                            <img
+                                src={displayedProject.image}
+                                alt='image du projet'
+                                loading="eager"
+                                decoding="async"
+                                className="w-full max-h-3/4  object-contain"
+                            />
                         }
                     </span>
                 </span>

@@ -3,11 +3,11 @@ import {PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, Responsiv
 
 export default function MyRadarChart() {
     let dataBar = [
-        {name: 'communication', maitrisé: 75},
-        {name: 'gestion de projet', maitrisé: 85},
-        {name: 'langues', maitrisé: 90},
-        {name: 'algorithmie', maitrisé: 70},
-        {name: 'autonomie', maitrisé: 90},
+        {name: 'communication', maitrise: 75},
+        {name: 'gestion de projet', maitrise: 85},
+        {name: 'langues', maitrise: 90},
+        {name: 'algorithmie', maitrise: 70},
+        {name: 'autonomie', maitrise: 90},
     ];
 
     return (
@@ -23,7 +23,7 @@ export default function MyRadarChart() {
                     <PolarRadiusAxis angle={14} domain={[0, 100]}/>
                     <Radar
                         name="Maîtrise"
-                        dataKey="maitrisé"
+                        dataKey="maitrise"
                         stroke="#8884d8"
                         fill="#8884d8"
                         fillOpacity={0.6}

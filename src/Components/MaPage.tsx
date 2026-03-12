@@ -9,7 +9,7 @@ export default function MaPage() {
             <span className="flex flex-col gap-2 justify-center w-fit">
                 {/*TODO: developper infos*/}
                 <h1>Nils Derrien</h1>
-                <h2>2ème année d'IUT info</h2>
+                <h2>3ème année d'IUT info</h2>
                 <h2>Spécialité : RA</h2>
                 <BtnDownload></BtnDownload>
             </span>
