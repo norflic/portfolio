@@ -199,7 +199,7 @@ function App() {
     return (
         <>
             <Header></Header>
-            <body className=" bg-[url('/portfolio/projects_img/test.avif')] bg-cover bg-center bg-no-repeat">
+            <div className=" bg-[url('/portfolio/projects_img/test.avif')] bg-cover bg-center bg-no-repeat">
             <div>
                 <MaPage></MaPage>
             </div>
@@ -208,7 +208,7 @@ function App() {
                 <Projets selectedProjects={selectedProjects} />
             </div>
             <Stats selectedProjects={selectedProjects} selectedCategorie={selectedCategorie}/>
-            </body>
+            </div>
 
         </>
     )

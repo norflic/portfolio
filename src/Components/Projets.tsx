@@ -13,8 +13,8 @@ export default function Projets({selectedProjects}: ProjetsProps) {
 
             <div className="flex flex-row gap-10 mx-10 justify-center ">
                 {selectedProjects.map((project, index) => (
-                    <div className=" flex flex-col items-center ">
-                        <ProjectCard key={index} displayedProject={project}/>
+                    <div key={index} className=" flex flex-col items-center ">
+                        <ProjectCard displayedProject={project}/>
                         {/*TODO : easter egg coueurs de meinceraft*/}
                         <div className="flex flex-row  ">
                             {Array.from({length: 5}).map((_, i) => (
