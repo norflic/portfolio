@@ -81,7 +81,7 @@ function App() {
         projetsPersos : [
             {
                 title: "Site de plongée sous-marine",
-                image: "/portfolio/projects_img/image_indisponible.png",
+                image: "",
                 description:
                     "Ce site m'a été demandé par un proche. Je l'ai fait avec plaisir pour participer à la vie associative du club de plongée d'Agay. L'objectif de ce site était de permettre une meilleure administration des papiers des plongeurs par le directeur de plongée.",
                 note:4,
@@ -129,8 +129,6 @@ function App() {
     };
     const [selectedProjects, setSelectedProjects] = useState<Project[]>(projects[ProjectCategory.Web]);
     const [selectedCategorie, setSelectedCategorie] = useState<ProjectCategory>(ProjectCategory.Web);
-    console.log(selectedProjects);
-    console.log(selectedCategorie);
 
     useEffect(() => {
         const btnWeb = document.getElementById("btn_web");
@@ -140,27 +138,22 @@ function App() {
         const btnEntreprise= document.getElementById("btn_entreprise");
 
         btnWeb?.addEventListener("click", () => {
-            console.log("web");
             setSelectedProjects(projects[ProjectCategory.Web])
             setSelectedCategorie(ProjectCategory.Web)
         });
         btnAppli?.addEventListener("click", () => {
-            console.log("appli");
             setSelectedProjects(projects[ProjectCategory.Applications])
             setSelectedCategorie(ProjectCategory.Applications)
         });
         btnProjetsPersos?.addEventListener("click", () => {
-            console.log("projetsPersos");
             setSelectedProjects(projects[ProjectCategory.ProjetsPersos])
             setSelectedCategorie(ProjectCategory.ProjetsPersos)
         });
         btnMobile?.addEventListener("click", () => {
-            console.log("mobile");
             setSelectedProjects(projects[ProjectCategory.Mobile])
             setSelectedCategorie(ProjectCategory.Mobile)
         });
         btnEntreprise?.addEventListener("click", () => {
-            console.log("entreprise");
             setSelectedProjects(projects[ProjectCategory.Entreprise])
             setSelectedCategorie(ProjectCategory.Entreprise)
         });

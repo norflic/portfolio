@@ -9,8 +9,6 @@ export type StatsProps = {
 }
 
 export default function Stats({selectedProjects, selectedCategorie}: StatsProps) {
-    // console.log("selectedProjects = ");
-    // console.log(selectedProjects);
     return (
         <div className="pt-8">
             <h1 className="text-center pb-8">
