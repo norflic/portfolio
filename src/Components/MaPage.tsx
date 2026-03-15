@@ -15,12 +15,12 @@ export default function MaPage() {
             </span>
             <span className="flex-[1.2] flex flex-col gap-6 justify-center items-center text-center">
                 <span className="">A propos de moi</span>
-                <p className="flex flex-col items-center mb-0">
+                <p className="flex flex-col items-center mb-0 ml-10 mr-10">
                     <span>
-                        Je recherche actuellement une alternance pour ma 3ème année de BUT informatique.
+                        Je recherche actuellement un stage de 13 semaines, à compter du 7 avril 2026, pour ma 3ème année en IUT informatique et/ou une alternance pour mon master en informatique à compter de septembre 2026.
                     </span>
                     <span>
-                        Je suis quelqu'un de sérieux, impliqué et je suis toujours enthousiaste à <br/> l'idée de vivre de nouvelles expériences.
+                        Je suis sérieux, impliqué et toujours enthousiaste à <br/> l'idée de vivre de nouvelles expériences.
                     </span>
                     <span>
                         Mes activités préférées sont le vélo et la plongée sous-marine.
