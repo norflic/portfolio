@@ -33,6 +33,11 @@ export async function destinationExists(href: string): Promise<boolean> {
 export async function getLinkStatus(href: string): Promise<LinkCheckStatus> {
     if (!href || href === "#") return "isInvalid";
 
+    // Avoid mixed-content fetch blocking (HTTPS page checking HTTP URL).
+    if (window.location.protocol === "https:" && href.startsWith("http://")) {
+        return null;
+    }
+
     try {
         const headResponse = await fetchWithTimeout(href, {
             method: "HEAD",
