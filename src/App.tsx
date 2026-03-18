@@ -3,8 +3,8 @@ import MaPage from "./Components/MaPage";
 import Projets from "./Components/Projets";
 import Stats from "./Components/stats/Stats";
 import {useEffect, useRef, useState} from "react";
-import {Lien, Project, ProjectCategory, Projects} from "./Models/Project";
-import {updateProjectsLinksStatus} from "./utils/linkUtils.ts";
+import {ProjectCategory, Projects} from "./Models/Project";
+import {LINK_STATUS_UPDATE_EVENT, LinkStatusUpdateDetail, updateProjectsLinksStatus} from "./utils/linkUtils.ts";
 
 function App() {
     const preloadedImagesRef = useRef<Set<string>>(new Set());
@@ -17,11 +17,11 @@ function App() {
                 listeLiens: [
                     {
                         lien: "https://sae105.portfolio.a4r.fr",
-                        status: null
+                        status: "unchecked"
                     },
                     {
                         lien: "http://p2301438.pages.univ-lyon1.fr/sae-1.05-recueil-des-besoins/",
-                        status: null
+                        status: "unchecked"
                     }
 
                 ],
@@ -38,11 +38,11 @@ function App() {
                 listeLiens: [
                     {
                         lien: "https://challenger.portfolio.a4r.fr",
-                        status: null
+                        status: "unchecked"
                     },
                     {
                         lien: "https://challenger.host/",
-                        status: null
+                        status: "unchecked"
                     }
 
                 ],
@@ -58,8 +58,8 @@ function App() {
                 image: "/portfolio/projects_img/blog_symfony.png",
                 listeLiens: [
                     {
-                        lien: "https://tp-symfo.portfolio.a4r.fazdr",
-                        status: null
+                        lien: "https://tp-symfo.portfolio.a4r.fr",
+                        status: "unchecked"
                     }],
                 description:
                     "Ce site a été le premier à être réalisé à l'aide de symfony et ça ne sera certainement pas le dernier. Il est l'un des projets les plus complets, de part son style graphique très travaillé et par le temps passé.",
@@ -161,39 +161,48 @@ function App() {
     const selectedProjects = projects[selectedCategorie];
 
     useEffect(() => {
-        let cancelled = false;
+        const handleLinkStatusUpdate = (event: Event) => {
+            console.log("réponse recue")
+            const customEvent = event as CustomEvent<LinkStatusUpdateDetail>;
+            const {category, projectIndex, linkIndex, status} = customEvent.detail;
 
-        const run = async () => {
-            console.log("début update etat liens")
-            const updatedProjects = await updateProjectsLinksStatus(initialProjects);
-            console.log("etat liens finis")
+            setProjects((prev) => {
+                const categoryProjects = prev[category];
+                const project = categoryProjects?.[projectIndex];
+                const linkItem = project?.listeLiens?.[linkIndex];
 
-            const allLinksStatus = Object.values(ProjectCategory).flatMap((category) =>
-                updatedProjects[category].flatMap((project: Project) =>
-                    project.listeLiens.map((linkItem: Lien) => ({
-                        categorie: category,
-                        projet: project.title,
-                        lien: linkItem.lien,
-                        status: linkItem.status,
-                    }))
-                )
-            );
+                if (!categoryProjects || !project || !linkItem) {
+                    return prev;
+                }
 
-            if (allLinksStatus.length > 0) {
-                console.table(allLinksStatus);
-            } else {
-                console.log("Aucun lien a verifier dans les projets.");
-            }
+                if (linkItem.status === status) {
+                    return prev;
+                }
 
-            if (!cancelled) {
-                setProjects(updatedProjects);
-            }
+                const updatedLinks = [...project.listeLiens];
+                updatedLinks[linkIndex] = {
+                    ...linkItem,
+                    status,
+                };
+
+                const updatedCategoryProjects = [...categoryProjects];
+                updatedCategoryProjects[projectIndex] = {
+                    ...project,
+                    listeLiens: updatedLinks,
+                };
+
+                return {
+                    ...prev,
+                    [category]: updatedCategoryProjects,
+                };
+            });
         };
 
-        void run();
+        window.addEventListener(LINK_STATUS_UPDATE_EVENT, handleLinkStatusUpdate as EventListener);
+        void updateProjectsLinksStatus(initialProjects);
 
         return () => {
-            cancelled = true;
+            window.removeEventListener(LINK_STATUS_UPDATE_EVENT, handleLinkStatusUpdate as EventListener);
         };
     }, []);
 

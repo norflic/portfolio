@@ -14,7 +14,7 @@ export default function LinkManager({ links, children, className }: LinkManagerP
     );
 
     const isInvalidLink =
-        primaryLink?.status === "isInvalid" || primaryLink?.status === "error";
+        primaryLink?.status !== "isValid" && primaryLink?.status !== "unchecked";
 
     const linkClassName = [
         className,

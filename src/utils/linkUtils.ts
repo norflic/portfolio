@@ -1,6 +1,20 @@
-import { LinkCheckStatus, Projects, ProjectCategory } from "../Models/Project";
+import {LinkCheckStatus, Projects, ProjectCategory, Lien} from "../Models/Project";
 
-const LINK_REQUEST_TIMEOUT_MS = 2000;
+const LINK_REQUEST_TIMEOUT_MS = 5000;
+const SOFT_INVALID_TIMEOUT_MS = 2000;
+
+export const LINK_STATUS_UPDATE_EVENT = "link-status-update";
+
+export type LinkStatusUpdateDetail = {
+    category: ProjectCategory;
+    projectIndex: number;
+    linkIndex: number;
+    status: LinkCheckStatus;
+};
+
+function emitLinkStatusUpdate(detail: LinkStatusUpdateDetail): void {
+    window.dispatchEvent(new CustomEvent<LinkStatusUpdateDetail>(LINK_STATUS_UPDATE_EVENT, {detail}));
+}
 
 async function fetchWithTimeout(
     href: string,
@@ -35,7 +49,7 @@ export async function getLinkStatus(href: string): Promise<LinkCheckStatus> {
 
     // Avoid mixed-content fetch blocking (HTTPS page checking HTTP URL).
     if (window.location.protocol === "https:" && href.startsWith("http://")) {
-        return null;
+        return "unchecked";
     }
 
     try {
@@ -69,29 +83,41 @@ export async function getLinkStatus(href: string): Promise<LinkCheckStatus> {
 
 export async function updateProjectsLinksStatus(projects: Projects): Promise<Projects> {
     const categories = Object.values(ProjectCategory);
-    const updatedProjects = {} as Projects;
 
-    await Promise.all(
-        categories.map(async (category) => {
-            const updatedCategoryProjects = await Promise.all(
-                projects[category].map(async (project) => {
-                    const updatedLinks = await Promise.all(
-                        project.listeLiens.map(async (linkItem) => ({
-                            ...linkItem,
-                            status: await getLinkStatus(linkItem.lien),
-                        }))
-                    );
+    categories.forEach((category) => {
+        projects[category].forEach((project, projectIndex) => {
+            project.listeLiens.forEach((linkItem: Lien, linkIndex) => {
+                if (linkItem.status === "notUpdateableInvalid") {
+                    return;
+                }
 
-                    return {
-                        ...project,
-                        listeLiens: updatedLinks,
-                    };
-                })
-            );
+                void (async () => {
+                    let softTimeoutTriggered = false;
+                    const softTimer = window.setTimeout(() => {
+                        softTimeoutTriggered = true;
+                        emitLinkStatusUpdate({
+                            category,
+                            projectIndex,
+                            linkIndex,
+                            status: "isInvalid",
+                        });
+                    }, SOFT_INVALID_TIMEOUT_MS);
 
-            updatedProjects[category] = updatedCategoryProjects;
-        })
-    );
+                    const finalStatus = await getLinkStatus(linkItem.lien);
+                    window.clearTimeout(softTimer);
 
-    return updatedProjects;
+                    if (!softTimeoutTriggered || finalStatus !== "isInvalid") {
+                        emitLinkStatusUpdate({
+                            category,
+                            projectIndex,
+                            linkIndex,
+                            status: finalStatus,
+                        });
+                    }
+                })();
+            });
+        });
+    });
+
+    return projects;
 }

@@ -17,7 +17,7 @@ export type Project = {
     };
 }
 
-export type LinkCheckStatus = null | "isValid" | "isInvalid" | "error";
+export type LinkCheckStatus = "unchecked" | "isValid" | "isInvalid" | "notUpdateableInvalid" | "error";
 
 export type Lien = {
     lien: string;
