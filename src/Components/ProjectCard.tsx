@@ -1,5 +1,6 @@
 import '../assets/projet.css';
 import {Project} from "../Models/Project.ts";
+import LinkManager from "./LinkManager.tsx";
 
 export type ProjectCardProps = {
     displayedProject: Project;
@@ -7,6 +8,7 @@ export type ProjectCardProps = {
 
 export default function ProjectCard({ displayedProject}: ProjectCardProps) {
     if (!displayedProject) return null;
+    const availableLinks = displayedProject.listeLiens;
 
     let imagePath: string = "/portfolio/projects_img/image_indisponible.png"
     if (displayedProject.image !== ""){
@@ -29,10 +31,10 @@ export default function ProjectCard({ displayedProject}: ProjectCardProps) {
                             />
                     </span>
                 </span>
-                {displayedProject.lienSite && (
-                    <a href={displayedProject.lienSite} target="_blank" rel="noopener noreferrer">
+                {availableLinks.length > 0 && (
+                    <LinkManager links={availableLinks}>
                         lien vers {displayedProject.title}
-                    </a>
+                    </LinkManager>
                 )}
                 <p className="max-w-md whitespace-normal">{displayedProject.description}</p>
             </div>

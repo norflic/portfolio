@@ -3,19 +3,17 @@ import ProjectCard from "./ProjectCard";
 import clsx from "clsx";
 
 export type ProjetsProps = {
-    selectedProjects: Project[]
+    selectedProjects: Project[];
 }
 
 export default function Projets({selectedProjects}: ProjetsProps) {
 
     return (
         <div className="flex flex-col justify-between">
-
             <div className="flex flex-row gap-10 mx-10 justify-center ">
                 {selectedProjects.map((project, index) => (
                     <div key={index} className=" flex flex-col items-center ">
-                        <ProjectCard displayedProject={project}/>
-                        {/*TODO : easter egg coueurs de meinceraft*/}
+                        <ProjectCard displayedProject={project} />
                         <div className="flex flex-row  ">
                             {Array.from({length: 5}).map((_, i) => (
                                 <img

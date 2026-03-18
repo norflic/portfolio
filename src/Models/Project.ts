@@ -9,12 +9,19 @@ export enum ProjectCategory {
 export type Project = {
     title: string;
     image: string;
-    lienSite?: string;
+    listeLiens: Lien[];
     description: string;
     note: number;
     data: {
         time: number;
     };
+}
+
+export type LinkCheckStatus = null | "isValid" | "isInvalid" | "error";
+
+export type Lien = {
+    lien: string;
+    status: LinkCheckStatus;
 }
 
 export type Projects = {
