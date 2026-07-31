@@ -2,54 +2,47 @@ import BtnDownload from "./BtnDownload.tsx";
 
 export default function MaPage() {
     return (
-        <div id="pres_page" className="flex flex-row max-h-80">
-            <span className="flex-[0.8]  w-auto h-auto flex items-center justify-start mb-0">
-                <img className="scale-40" id="head_img" src="/portfolio/head_img.png" alt=""/>
-            </span>
-            <span className="flex flex-col gap-2 justify-center w-fit">
-                {/*TODO: developper infos*/}
-                <h1>Nils Derrien</h1>
-                <h2>3ème année d'IUT info</h2>
-                <h2>Spécialité : RA</h2>
-                <BtnDownload></BtnDownload>
-            </span>
-            <span className="flex-[1.2] flex flex-col gap-6 justify-center items-center text-center">
-                <span className="">A propos de moi</span>
-                <p className="flex flex-col items-center mb-0 ml-10 mr-10">
-                    <span>
-                        Je recherche actuellement un stage de 13 semaines, à compter du 7 avril 2026, pour ma 3ème année en IUT informatique et/ou une alternance pour mon master en informatique à compter de septembre 2026.
-                    </span>
-                    <span>
-                        Je suis sérieux, impliqué et toujours enthousiaste à <br/> l'idée de vivre de nouvelles expériences.
-                    </span>
-                    <span>
-                        Mes activités préférées sont le vélo et la plongée sous-marine.
-                    </span>
-                    <span>
-                        Je vous propose de découvrir mes projets en parcourant mon portfolio
-                    </span>
+        <div
+            id="pres_page"
+            className="flex flex-wrap items-center justify-evenly gap-x-[clamp(2rem,8vw,6rem)] gap-y-6 px-[clamp(2rem,6vw,4rem)] py-8"
+        >
+            <img
+                className="h-60 w-auto shrink-0 object-contain"
+                id="head_img"
+                src="/portfolio/head_img.png"
+                alt="Portrait de Nils Derrien"
+            />
+            <div className="flex shrink-0 flex-col gap-2">
+                <h1 className="text-5xl">Nils Derrien</h1>
+                <h2 className="text-3xl">3ème année d&apos;IUT info</h2>
+                <h2 className="text-3xl">Spécialité : RA</h2>
+                <BtnDownload />
+            </div>
+
+            <section className="flex min-w-[min(100%,280px)] flex-[1_1_24rem] max-w-xl flex-col gap-3 text-center">
+                <span className="text-2xl">A propos de moi</span>
+                <p className="leading-relaxed">
+                    Je recherche actuellement un stage de 13 semaines, à compter du 7 avril 2026,
+                    pour ma 3ème année en IUT informatique et/ou une alternance pour mon master
+                    en informatique à compter de septembre 2026.
+                    {" "}
+                    Je suis sérieux, impliqué et toujours enthousiaste à l&apos;idée de vivre de
+                    nouvelles expériences.
+                    {" "}
+                    Mes activités préférées sont le vélo et la plongée sous-marine.
+                    {" "}
+                    Je vous propose de découvrir mes projets en parcourant mon portfolio.
                 </p>
-            </span>
+            </section>
+
             <style>
                 {`
-                    #pres_page  {
-                        padding : 2 rem;
-                    }
-                    #btn_cv a{
+                    #btn_cv a {
                         display: flex;
                         gap: 1rem;
-                    }
-                    h1 {
-                        font-size: 3rem;
-                    }
-                    h2 {
-                        font-size: 2rem;
                     }
                 `}
             </style>
         </div>
     );
 }
-
-
-

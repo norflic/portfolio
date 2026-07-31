@@ -1,11 +1,19 @@
 export const MIN_GAP_PX = 40;
 export const MIN_CARD_WIDTH_PX = 280;
+export const MAX_CARD_WIDTH_PX = 420;
 export const MAX_VISIBLE = 3;
 
 export type CarouselLayout = {
   visibleCount: number;
   slideWidthPx: number;
 };
+
+function capSlideWidth(slideWidthPx: number, itemCount: number): number {
+  if (itemCount < MAX_VISIBLE) {
+    return Math.min(slideWidthPx, MAX_CARD_WIDTH_PX);
+  }
+  return slideWidthPx;
+}
 
 export function computeCarouselLayout(
   availableWidthPx: number,
@@ -21,9 +29,15 @@ export function computeCarouselLayout(
     const totalGaps = (n - 1) * MIN_GAP_PX;
     const slideWidthPx = (availableWidthPx - totalGaps) / n;
     if (slideWidthPx >= MIN_CARD_WIDTH_PX) {
-      return { visibleCount: n, slideWidthPx };
+      return {
+        visibleCount: n,
+        slideWidthPx: capSlideWidth(slideWidthPx, itemCount),
+      };
     }
   }
 
-  return { visibleCount: 1, slideWidthPx: availableWidthPx };
+  return {
+    visibleCount: 1,
+    slideWidthPx: capSlideWidth(availableWidthPx, itemCount),
+  };
 }

@@ -134,7 +134,7 @@ export default function ProjectCarousel<T>({
         style={slideStyle}
       >
         <div
-          className="flex"
+          className={`flex${!isCarouselActive ? " justify-center" : ""}`}
           style={{ gap: MIN_GAP_PX, touchAction: "pan-y pinch-zoom" }}
         >
           {items.map((item, index) => (

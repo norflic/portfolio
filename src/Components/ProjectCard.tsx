@@ -16,27 +16,28 @@ export default function ProjectCard({ displayedProject}: ProjectCardProps) {
     }
 
     return (
-            <div className="card flex w-full flex-col justify-between items-center text-center h-96">
-                <span>
+            <div className="card flex h-96 w-full min-w-0 flex-col overflow-hidden text-center">
+                <h3 className="shrink-0">{displayedProject.title}</h3>
 
-                    <h3>{displayedProject.title}</h3>
+                <div className="mb-2 flex min-h-0 w-full flex-1 items-center justify-center overflow-hidden">
+                    <img
+                        src={imagePath}
+                        alt="image du projet"
+                        loading="eager"
+                        decoding="async"
+                        className="max-h-full max-w-full object-contain"
+                    />
+                </div>
 
-                    <span className="w-full aspect-video overflow-hidden mb-2">
-                            <img
-                                src={imagePath}
-                                alt='image du projet'
-                                loading="eager"
-                                decoding="async"
-                                className="w-full max-h-3/4  object-contain"
-                            />
-                    </span>
-                </span>
                 {availableLinks.length > 0 && (
-                    <LinkManager links={availableLinks}>
+                    <LinkManager links={availableLinks} className="shrink-0">
                         lien vers {displayedProject.title}
                     </LinkManager>
                 )}
-                <p className="max-w-md whitespace-normal">{displayedProject.description}</p>
+
+                <p className="mt-1 line-clamp-3 w-full min-w-0 shrink-0 leading-snug">
+                    {displayedProject.description}
+                </p>
             </div>
     );
 }
