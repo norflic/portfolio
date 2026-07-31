@@ -8,13 +8,6 @@ export type CarouselLayout = {
   slideWidthPx: number;
 };
 
-function capSlideWidth(slideWidthPx: number, itemCount: number): number {
-  if (itemCount < MAX_VISIBLE) {
-    return Math.min(slideWidthPx, MAX_CARD_WIDTH_PX);
-  }
-  return slideWidthPx;
-}
-
 export function computeCarouselLayout(
   availableWidthPx: number,
   itemCount: number,
@@ -31,13 +24,19 @@ export function computeCarouselLayout(
     if (slideWidthPx >= MIN_CARD_WIDTH_PX) {
       return {
         visibleCount: n,
-        slideWidthPx: capSlideWidth(slideWidthPx, itemCount),
+        slideWidthPx:
+          itemCount < MAX_VISIBLE
+            ? Math.min(slideWidthPx, MAX_CARD_WIDTH_PX)
+            : slideWidthPx,
       };
     }
   }
 
   return {
     visibleCount: 1,
-    slideWidthPx: capSlideWidth(availableWidthPx, itemCount),
+    slideWidthPx:
+      itemCount < MAX_VISIBLE
+        ? Math.min(availableWidthPx, MAX_CARD_WIDTH_PX)
+        : availableWidthPx,
   };
 }

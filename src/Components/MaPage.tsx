@@ -24,14 +24,8 @@ export default function MaPage() {
                 <p className="leading-relaxed">
                     Je recherche actuellement un stage de 13 semaines, à compter du 7 avril 2026,
                     pour ma 3ème année en IUT informatique et/ou une alternance pour mon master
-                    en informatique à compter de septembre 2026.
-                    {" "}
-                    Je suis sérieux, impliqué et toujours enthousiaste à l&apos;idée de vivre de
-                    nouvelles expériences.
-                    {" "}
-                    Mes activités préférées sont le vélo et la plongée sous-marine.
-                    {" "}
-                    Je vous propose de découvrir mes projets en parcourant mon portfolio.
+                    en informatique à compter de septembre 2026.                    Je suis sérieux, impliqué et toujours enthousiaste à l&apos;idée de vivre de
+                    nouvelles expériences.                    Mes activités préférées sont le vélo et la plongée sous-marine.                    Je vous propose de découvrir mes projets en parcourant mon portfolio.
                 </p>
             </section>
 

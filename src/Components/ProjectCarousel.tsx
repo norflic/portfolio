@@ -1,20 +1,20 @@
 import {
   useCallback,
   useEffect,
-  useMemo,
   useRef,
   useState,
   type CSSProperties,
   type ReactNode,
 } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import clsx from "clsx";
 import { useCarouselLayout } from "../hooks/useCarouselLayout";
 import { MIN_GAP_PX } from "../utils/carouselLayout";
 
 export type ProjectCarouselProps<T> = {
   items: T[];
   renderSlide: (item: T, index: number) => ReactNode;
-  carouselKey?: string;
+  carouselKey: string;
 };
 
 function CarouselArrow({
@@ -62,8 +62,6 @@ export default function ProjectCarousel<T>({
 
   const isCarouselActive = items.length > visibleCount && visibleCount > 0;
 
-  const resetKey = carouselKey ?? items.map((item) => String(item)).join("|");
-
   const [emblaRef, emblaApi] = useEmblaCarousel({
     slidesToScroll: 1,
     dragFree: false,
@@ -99,15 +97,7 @@ export default function ProjectCarousel<T>({
 
   useEffect(() => {
     emblaApi?.scrollTo(0, true);
-  }, [emblaApi, resetKey]);
-
-  const slideStyle = useMemo(
-    () =>
-      ({
-        "--slide-width": `${slideWidthPx}px`,
-      }) as CSSProperties,
-    [slideWidthPx],
-  );
+  }, [emblaApi, carouselKey]);
 
   if (items.length === 0) {
     return null;
@@ -131,10 +121,10 @@ export default function ProjectCarousel<T>({
       <div
         className="min-w-0 flex-1 overflow-hidden"
         ref={setViewportRef}
-        style={slideStyle}
+        style={{ "--slide-width": `${slideWidthPx}px` } as CSSProperties}
       >
         <div
-          className={`flex${!isCarouselActive ? " justify-center" : ""}`}
+          className={clsx("flex", !isCarouselActive && "justify-center")}
           style={{ gap: MIN_GAP_PX, touchAction: "pan-y pinch-zoom" }}
         >
           {items.map((item, index) => (

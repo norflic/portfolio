@@ -30,12 +30,12 @@ export default function ProjectCard({ displayedProject}: ProjectCardProps) {
                 </div>
 
                 {availableLinks.length > 0 && (
-                    <LinkManager links={availableLinks} className="shrink-0">
+                    <LinkManager links={availableLinks}>
                         lien vers {displayedProject.title}
                     </LinkManager>
                 )}
 
-                <p className="mt-1 line-clamp-3 w-full min-w-0 shrink-0 leading-snug">
+                <p className="mt-1 line-clamp-3 w-full min-w-0 leading-snug">
                     {displayedProject.description}
                 </p>
             </div>

@@ -16,7 +16,7 @@ export default function Projets({ selectedProjects }: ProjetsProps) {
         items={selectedProjects}
         carouselKey={carouselKey}
         renderSlide={(project, index) => (
-          <div className="flex w-full min-w-0 flex-col items-center">
+          <div className="flex flex-col items-center">
             <ProjectCard displayedProject={project} />
             <div className="flex flex-row">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -31,7 +31,7 @@ export default function Projets({ selectedProjects }: ProjetsProps) {
                   className={clsx(
                     "mx-0.5 transition-all duration-300",
                     i > project.note - 1
-                      ? "w-8 h-8 translate-x-[-0px] translate-y-[3px]"
+                      ? "w-8 h-8 translate-y-[3px]"
                       : "w-10 h-10",
                   )}
                 />
