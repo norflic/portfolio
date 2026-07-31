@@ -1,0 +1,5 @@
+Task 1: complete (embla installed)
+Task 2: complete (layout utils + hook)
+Task 3: complete (ProjectCarousel)
+Task 4: complete (Projets + ProjectCard)
+Task 5: complete (build + lint OK)

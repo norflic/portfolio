@@ -16,7 +16,7 @@ export default function ProjectCard({ displayedProject}: ProjectCardProps) {
     }
 
     return (
-            <div className="card flex-1 flex flex-col justify-between  items-center text-center  h-96">
+            <div className="card flex w-full flex-col justify-between items-center text-center h-96">
                 <span>
 
                     <h3>{displayedProject.title}</h3>
