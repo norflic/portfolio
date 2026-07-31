@@ -19,14 +19,23 @@ export default function MaPage() {
                 <BtnDownload />
             </div>
 
-            <section className="flex min-w-[min(100%,280px)] flex-[1_1_24rem] max-w-xl flex-col gap-3 text-center">
-                <span className="text-2xl">A propos de moi</span>
-                <p className="leading-relaxed">
-                    Je recherche actuellement un stage de 13 semaines, à compter du 7 avril 2026,
-                    pour ma 3ème année en IUT informatique et/ou une alternance pour mon master
-                    en informatique à compter de septembre 2026.                    Je suis sérieux, impliqué et toujours enthousiaste à l&apos;idée de vivre de
-                    nouvelles expériences.                    Mes activités préférées sont le vélo et la plongée sous-marine.                    Je vous propose de découvrir mes projets en parcourant mon portfolio.
-                </p>
+            <section className="flex min-w-[min(100%,280px)] flex-[1_1_24rem] max-w-xl flex-col gap-3">
+                <span className="text-center text-2xl">A propos de moi</span>
+                <div className="flex flex-col gap-3 text-justify leading-relaxed hyphens-auto">
+                    <p>
+                        Je recherche actuellement un stage de 13 semaines, à compter du 7 avril 2026,
+                        pour ma 3ème année en IUT informatique et/ou une alternance pour mon master
+                        en informatique à compter de septembre 2026.
+                    </p>
+                    <p>
+                        Je suis sérieux, impliqué et toujours enthousiaste à l&apos;idée de vivre de
+                        nouvelles expériences. Mes activités préférées sont le vélo et la plongée
+                        sous-marine.
+                    </p>
+                    <p>
+                        Je vous propose de découvrir mes projets en parcourant mon portfolio.
+                    </p>
+                </div>
             </section>
 
             <style>
