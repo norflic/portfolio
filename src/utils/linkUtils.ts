@@ -85,7 +85,7 @@ export async function updateProjectsLinksStatus(projects: Projects): Promise<Pro
     const categories = Object.values(ProjectCategory);
 
     categories.forEach((category) => {
-        projects[category].forEach((project, projectIndex) => {
+        projects[category].projects.forEach((project, projectIndex) => {
             project.listeLiens.forEach((linkItem: Lien, linkIndex) => {
                 if (linkItem.status === "notUpdateableInvalid") {
                     return;

@@ -24,6 +24,11 @@ export type Lien = {
     status: LinkCheckStatus;
 }
 
+export type ProjectSection = {
+    title: string;
+    projects: Project[];
+};
+
 export type Projects = {
-    [key in ProjectCategory]: Project[];
+    [key in ProjectCategory]: ProjectSection;
 }

@@ -10,7 +10,9 @@ function App() {
     const preloadedImagesRef = useRef<Set<string>>(new Set());
 
     const initialProjects: Projects = {
-        web: [
+        web: {
+            title: "Web",
+            projects: [
             {
                 title: "Moove green",
                 image: "/portfolio/projects_img/moove_green.png",
@@ -69,7 +71,10 @@ function App() {
                 },
             }
         ],
-        applications: [
+        },
+        applications: {
+            title: "Applications",
+            projects: [
             {
                 title: "SAE Gestion d'un espace aérien",
                 image: "/portfolio/projects_img/sae_aeroport.png",
@@ -104,7 +109,10 @@ function App() {
                 },
             },
         ],
-        projetsPersos: [
+        },
+        projetsPersos: {
+            title: "Projets persos",
+            projects: [
             {
                 title: "Site de plongée sous-marine",
                 image: "",
@@ -128,7 +136,10 @@ function App() {
                 },
             },
         ],
-        mobile: [
+        },
+        mobile: {
+            title: "Mobile",
+            projects: [
             {
                 title: "Application de livraison",
                 image: "/portfolio/projects_img/kotlin.png",
@@ -141,7 +152,10 @@ function App() {
                 },
             },
         ],
-        entreprise: [
+        },
+        entreprise: {
+            title: "Entreprise",
+            projects: [
             {
                 title: "Catalogue interractif",
                 image: "/portfolio/projects_img/catalogue.png",
@@ -153,12 +167,13 @@ function App() {
                     time: 330,
                 },
             },
-        ]
+        ],
+        },
 
     };
     const [projects, setProjects] = useState<Projects>(initialProjects);
     const [selectedCategorie, setSelectedCategorie] = useState<ProjectCategory>(ProjectCategory.Web);
-    const selectedProjects = projects[selectedCategorie];
+    const selectedProjects = projects[selectedCategorie].projects;
 
     useEffect(() => {
         const handleLinkStatusUpdate = (event: Event) => {
@@ -167,15 +182,11 @@ function App() {
             const {category, projectIndex, linkIndex, status} = customEvent.detail;
 
             setProjects((prev) => {
-                const categoryProjects = prev[category];
-                const project = categoryProjects?.[projectIndex];
+                const section = prev[category];
+                const project = section.projects[projectIndex];
                 const linkItem = project?.listeLiens?.[linkIndex];
 
-                if (!categoryProjects || !project || !linkItem) {
-                    return prev;
-                }
-
-                if (linkItem.status === status) {
+                if (!project || !linkItem || linkItem.status === status) {
                     return prev;
                 }
 
@@ -185,7 +196,7 @@ function App() {
                     status,
                 };
 
-                const updatedCategoryProjects = [...categoryProjects];
+                const updatedCategoryProjects = [...section.projects];
                 updatedCategoryProjects[projectIndex] = {
                     ...project,
                     listeLiens: updatedLinks,
@@ -193,7 +204,10 @@ function App() {
 
                 return {
                     ...prev,
-                    [category]: updatedCategoryProjects,
+                    [category]: {
+                        ...section,
+                        projects: updatedCategoryProjects,
+                    },
                 };
             });
         };
@@ -207,31 +221,6 @@ function App() {
     }, []);
 
     useEffect(() => {
-        const btnWeb = document.getElementById("btn_web");
-        const btnAppli = document.getElementById("btn_appli");
-        const btnProjetsPersos = document.getElementById("btn_projets_persos");
-        const btnMobile = document.getElementById("btn_mobile");
-        const btnEntreprise = document.getElementById("btn_entreprise");
-
-        btnWeb?.addEventListener("click", () => {
-            setSelectedCategorie(ProjectCategory.Web)
-        });
-        btnAppli?.addEventListener("click", () => {
-            setSelectedCategorie(ProjectCategory.Applications)
-        });
-        btnProjetsPersos?.addEventListener("click", () => {
-            setSelectedCategorie(ProjectCategory.ProjetsPersos)
-        });
-        btnMobile?.addEventListener("click", () => {
-            setSelectedCategorie(ProjectCategory.Mobile)
-        });
-        btnEntreprise?.addEventListener("click", () => {
-            setSelectedCategorie(ProjectCategory.Entreprise)
-        });
-
-    }, []);
-
-    useEffect(() => {
         const preload = (src: string) => {
             if (!src || preloadedImagesRef.current.has(src)) return;
 
@@ -240,9 +229,9 @@ function App() {
             preloadedImagesRef.current.add(src);
         };
 
-        const currentCategoryImages = projects[selectedCategorie].map((project) => project.image);
-        const allImages = Object.values(projects).flatMap((categoryProjects) =>
-            categoryProjects.map((project) => project.image)
+        const currentCategoryImages = projects[selectedCategorie].projects.map((project) => project.image);
+        const allImages = Object.values(projects).flatMap((section) =>
+            section.projects.map((project) => project.image)
         );
 
         const uniqueCurrentImages = Array.from(new Set(currentCategoryImages));
@@ -269,7 +258,11 @@ function App() {
 
     return (
         <>
-            <Header></Header>
+            <Header
+                projects={projects}
+                selectedCategory={selectedCategorie}
+                onSelectCategory={setSelectedCategorie}
+            />
             <div className=" bg-[url('/portfolio/projects_img/test.avif')] bg-cover bg-center bg-no-repeat">
                 <div>
                     <MaPage></MaPage>
