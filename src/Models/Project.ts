@@ -1,9 +1,9 @@
 export enum ProjectCategory {
+    Entreprise = "entreprise",
     Web = "web",
     Applications = "applications",
     ProjetsPersos = "projetsPersos",
     Mobile = "mobile",
-    Entreprise = "entreprise"
 }
 
 export type Project = {
@@ -21,6 +21,7 @@ export type LinkCheckStatus = "unchecked" | "isValid" | "isInvalid" | "notUpdate
 
 export type Lien = {
     lien: string;
+    nomLien: string;
     status: LinkCheckStatus;
 }
 

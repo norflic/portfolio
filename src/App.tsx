@@ -19,10 +19,12 @@ function App() {
                 listeLiens: [
                     {
                         lien: "https://sae105.portfolio.a4r.fr",
+                        nomLien: "Site Moove green",
                         status: "unchecked"
                     },
                     {
                         lien: "http://p2301438.pages.univ-lyon1.fr/sae-1.05-recueil-des-besoins/",
+                        nomLien: "Site Moove green",
                         status: "unchecked"
                     }
 
@@ -40,10 +42,12 @@ function App() {
                 listeLiens: [
                     {
                         lien: "https://challenger.portfolio.a4r.fr",
+                        nomLien: "Site Challenger",
                         status: "unchecked"
                     },
                     {
                         lien: "https://challenger.host/",
+                        nomLien: "Site en Challenger",
                         status: "unchecked"
                     }
 
@@ -61,6 +65,7 @@ function App() {
                 listeLiens: [
                     {
                         lien: "https://tp-symfo.portfolio.a4r.fr",
+                        nomLien: "Site Blog Symfony",
                         status: "unchecked"
                     }],
                 description:
@@ -156,18 +161,39 @@ function App() {
         entreprise: {
             title: "Entreprise",
             projects: [
-            {
-                title: "Catalogue interractif",
-                image: "/portfolio/projects_img/catalogue.png",
-                listeLiens: [],
-                description:
-                    "Ce site est le premier réalisé en entreprise. Il contient un catalogue interractif, un configurateur de produits, ainsi qu'une page pour créer des devis de manière simplifiée. Ce projet a été réalisé seul, de la conception de la base de données à la mise en production.",
-                note: 5,
-                data: {
-                    time: 330,
+                {
+                    title: "Catalogue interractif (Acial)",
+                    image: "/portfolio/projects_img/catalogue.png",
+                    listeLiens: [{
+                        lien: "https://customers.acial.com/catalogue/matrice/catalogue",
+                        nomLien: "Catalogue en ligne",
+                        status: "unchecked"
+                    }],
+                    description:
+                        "Ce site est le premier réalisé en entreprise. Il contient un catalogue interractif, un configurateur de produits, ainsi qu'une page pour créer des devis de manière simplifiée. Ce projet a été réalisé seul, de la conception de la base de données à la mise en production.",
+                    note: 5,
+                    data: {
+                        time: 330,
+                    },
                 },
-            },
-        ],
+                {
+                    title: "Fiches d'administrations MAP (Cellance)",
+                    image: "",
+                    listeLiens: [
+                        {
+                            lien: "https://www.mapbycellance.com/",
+                            nomLien: "présentation de MAP",
+                            status: "unchecked"
+                        }
+                    ],
+                    description:
+                        "J'ai développé de nombreuses pages d'administrations pour l'entreprise Cellance. Le projet sur lequel j'ai travaillé est MAP, qui contient 5 développeurs. Pendant ce stage, j'ai apprit à utiliser cursor, l'IA et à travailler en équipe.",
+                    note: 5,
+                    data: {
+                        time: 330,
+                    },
+                },
+                ],
         },
 
     };

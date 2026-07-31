@@ -1,13 +1,12 @@
-import { ReactNode, useMemo } from "react";
+import { useMemo } from "react";
 import { Lien as LinkItem } from "../Models/Project";
 
 export type LinkManagerProps = {
     links: LinkItem[];
-    children: ReactNode;
     className?: string;
 };
 
-export default function LinkManager({ links, children, className }: LinkManagerProps) {
+export default function LinkManager({ links, className }: LinkManagerProps) {
     const primaryLink = useMemo(
         () => links.find((link) => link.status === "isValid") ?? links[0],
         [links]
@@ -41,7 +40,7 @@ export default function LinkManager({ links, children, className }: LinkManagerP
             rel="noopener noreferrer"
             onClick={handleClick}
         >
-            {children}
+            {primaryLink.nomLien}
         </a>
     );
 }
