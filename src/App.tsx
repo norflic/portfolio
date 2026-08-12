@@ -178,7 +178,7 @@ function App() {
                 },
                 {
                     title: "Fiches d'administrations MAP (Cellance)",
-                    image: "",
+                    image: "/portfolio/projects_img/subvention-valeur-base.png",
                     listeLiens: [
                         {
                             lien: "https://www.mapbycellance.com/",
@@ -190,7 +190,7 @@ function App() {
                         "J'ai développé de nombreuses pages d'administrations pour l'entreprise Cellance. Le projet sur lequel j'ai travaillé est MAP, qui contient 5 développeurs. Pendant ce stage, j'ai apprit à utiliser cursor, l'IA et à travailler en équipe.",
                     note: 5,
                     data: {
-                        time: 330,
+                        time: 400,
                     },
                 },
                 ],
