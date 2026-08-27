@@ -23,9 +23,9 @@ export default function MaPage() {
                 <span className="text-center text-2xl">A propos de moi</span>
                 <div className="flex flex-col gap-3 text-justify leading-relaxed hyphens-auto">
                     <p>
-                        Je recherche actuellement un stage de 13 semaines, à compter du 7 avril 2026,
-                        pour ma 3ème année en IUT informatique et/ou une alternance pour mon master
-                        en informatique à compter de septembre 2026.
+                        Je finalise ma 3ème année de BUT informatique et à compter d'octobre 2026
+                        j'intégrerai à Epitech le Master of science en Intelligence Artifielle.
+                        Aussi, j'ai trouvé une alternance à CIMPA pour les 2 années à venir.
                     </p>
                     <p>
                         Je suis sérieux, impliqué et toujours enthousiaste à l&apos;idée de vivre de
