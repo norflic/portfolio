@@ -9,7 +9,7 @@ export default function MaPage() {
             <img
                 className="h-60 w-auto shrink-0 object-contain"
                 id="head_img"
-                src="/portfolio/head_img.png"
+                src="/portfolio/head_img.jpg"
                 alt="Portrait de Nils Derrien"
             />
             <div className="flex shrink-0 flex-col gap-2">
