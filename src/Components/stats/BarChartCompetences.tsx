@@ -42,6 +42,8 @@ export default function BarChartCompetences({selectedCategorie}: BarChartCompete
             dataBar = [
                 {name: 'Symfony', maitrise: 70, non_maitrise: 30},
                 {name: 'PHP', maitrise: 70, non_maitrise: 30},
+                {name: 'Angular', maitrise: 80, non_maitrise: 20},
+                {name: 'NestJS', maitrise: 70, non_maitrise: 30},
                 {name: 'bash', maitrise: 20, non_maitrise: 80},
             ];
             break;
