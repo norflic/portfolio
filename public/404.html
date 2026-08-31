@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting…</title>
+  </head>
+  <body>
+    <script>
+      (() => {
+        const repoBase = '/portfolio';
+        const path = window.location.pathname;
+        const search = window.location.search;
+        const hash = window.location.hash;
+
+        let redirectPath = '/';
+        if (path.startsWith(repoBase + '/')) {
+          redirectPath = path.slice(repoBase.length) || '/';
+        }
+
+        const target = `${repoBase}/?redirect=${encodeURIComponent(redirectPath + search + hash)}`;
+        window.location.replace(target);
+      })();
+    </script>
+  </body>
+</html>
+
